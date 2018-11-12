@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const git = require('git-rev-sync');
 const baseConfig = require('./base.config');
 const startKoa = require('./utils/start-koa');
 
@@ -24,7 +23,7 @@ module.exports = {
             'process.env': {
                 BROWSER: JSON.stringify(true),
                 NODE_ENV: JSON.stringify('development'),
-                VERSION: JSON.stringify(git.long())
+                VERSION: JSON.stringify(process.env.CONDENSER_GIT_TAG)
             }
         }),
         ...baseConfig.plugins,
