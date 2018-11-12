@@ -6,7 +6,7 @@
   "helmet": {
     "directives": {
       "childSrc": "'self' www.youtube.com staticxx.facebook.com w.soundcloud.com player.vimeo.com",
-      "connectSrc": "'self' steemit.com https://api.steemit.com api.blocktrades.us",
+      "connectSrc": "'self' earthshare.network https://a.earthshare.network api.blocktrades.us",
       "defaultSrc": "'self' www.youtube.com staticxx.facebook.com player.vimeo.com",
       "fontSrc": "data: fonts.gstatic.com",
       "frameAncestors": "'none'",
@@ -20,7 +20,7 @@
     "reportOnly": false,
     "setAllHeaders": true
   },
-  "img_proxy_prefix": "https://steemitdevimages.com/",
+  "img_proxy_prefix": "https://i.earthshare.network/",
   "ipfs_prefix": false,
   "mixpanel": false,
   "newrelic": false,
@@ -39,7 +39,7 @@
     "signing_key": "5J..."
   },
   "requestAccountRecovery": {
-    "recovery_account": "steem",
+    "recovery_account": "preico",
     "signing_key": "5J..."
   },
   "sendgrid": {
@@ -51,9 +51,9 @@
     }
   },
   "server_session_secret": "exiKdyF+IwRIXJDmtGIl4vWUz4i3eVSISpfZoeYc0s4=",
-  "session_cookie_key": "stm-dev",
-  "session_key": "steemses",
-  "site_domain": "steemitdev.com",
+  "session_cookie_key": "earthshare",
+  "session_key": "earthshare",
+  "site_domain": "earthshare.network",
   "tarantool": {
     "host": "localhost",
     "password": "",
@@ -69,11 +69,11 @@
     "auth_token": false
   },
   "upload_image": false,
-  "steemd_connection_client": "https://api.steemit.com",
-  "steemd_connection_server": "https://api.steemit.com",
+  "steemd_connection_client": "https://a.earthshare.network",
+  "steemd_connection_server": "https://jussi:9000",
   "steemd_use_appbase": false,
-  "chain_id": "0000000000000000000000000000000000000000000000000000000000000000",
-  "address_prefix": "STM",
+  "chain_id": "de8b3f085c312bc871ca3bd5f6efa0f09c4d428a4f7e35354f63a0c403e70b92",
+  "address_prefix": "ESH",
   "conveyor_posting_wif": false,
   "conveyor_username": false
 }

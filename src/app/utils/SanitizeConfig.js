@@ -174,8 +174,8 @@ export default ({
             if (!href) href = '#';
             href = href.trim();
             const attys = { href };
-            // If it's not a (relative or absolute) steemit URL...
-            if (!href.match(/^(\/(?!\/)|https:\/\/steemit.com)/)) {
+            // If it's not a (relative or absolute) earthshare URL...
+            if (!href.match(/^(\/(?!\/)|https:\/\/earthshare.network)/)) {
                 // attys.target = '_blank' // pending iframe impl https://mathiasbynens.github.io/rel-noopener/
                 attys.rel = highQualityPost ? 'noopener' : 'nofollow noopener';
                 attys.title = getExternalLinkWarningMessage();

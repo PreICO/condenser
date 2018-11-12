@@ -70,7 +70,7 @@ export default function reducer(state = defaultState, action) {
                         if (/Voting weight is too small/.test(errorStr)) {
                             errorKey = 'Voting weight is too small';
                             errorStr =
-                                'Voting weight is too small, please accumulate more voting power or steem power.';
+                                'Voting weight is too small, please accumulate more voting power or earthshare power.';
                         }
                         break;
                     case 'comment':
@@ -88,12 +88,12 @@ export default function reducer(state = defaultState, action) {
                         break;
                     case 'withdraw_vesting':
                         if (
-                            /Account registered by another account requires 10x account creation fee worth of Steem Power/.test(
+                            /Account registered by another account requires 10x account creation fee worth of Earthshare Power/.test(
                                 errorStr
                             )
                         )
                             errorKey =
-                                'Account requires 10x the account creation fee in Steem Power (approximately 30 SP) before it can power down.';
+                                'Account requires 10x the account creation fee in Earthshare Power (approximately 30 SP) before it can power down.';
                         break;
                     default:
                         break;
@@ -129,9 +129,9 @@ export default function reducer(state = defaultState, action) {
                         errorStr = errorStr.substring(0, 200);
                     // Catch for unknown key better error handling
                     if (/unknown key: /.test(errorKey)) {
-                        errorKey = "Steem account doesn't exist.";
+                        errorKey = "Earthshare account doesn't exist.";
                         errorStr =
-                            "Transaction failed: Steem account doesn't exist.";
+                            "Transaction failed: Earthshare account doesn't exist.";
                     }
                     // Catch for invalid active authority
                     if (/Missing Active Authority /.test(errorKey)) {

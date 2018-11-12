@@ -162,9 +162,9 @@ export default function useEnterAndConfirmMobilePages(app) {
                             <p>We need to send you a quick text. </p>
 
                             <p>
-                                With each Steemit account comes a free initial
-                                grant of Steem Power! Phone verification helps
-                                cut down on spam accounts.
+                                With each Earthshare account comes a free
+                                initial grant of Earthshare Power! Phone
+                                verification helps cut down on spam accounts.
                             </p>
 
                             <p>

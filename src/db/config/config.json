@@ -2,7 +2,7 @@
     "development": {
         "username": "root",
         "password": "password",
-        "database": "steemit_dev",
+        "database": "earthshare_dev",
         "host": "127.0.0.1",
         "dialect": "mysql"
     }

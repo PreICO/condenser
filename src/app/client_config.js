@@ -1,14 +1,14 @@
 // sometimes it's impossible to use html tags to style coin name, hence usage of _UPPERCASE modifier
-export const APP_NAME = 'Steemit';
+export const APP_NAME = 'Earthshare';
 // sometimes APP_NAME is written in non-latin characters, but they are needed for technical purposes
 // ie. "Голос" > "Golos"
-export const APP_NAME_LATIN = 'Steemit';
-export const APP_NAME_UPPERCASE = 'STEEMIT';
-export const APP_ICON = 'steem';
+export const APP_NAME_LATIN = 'Earthshare';
+export const APP_NAME_UPPERCASE = 'EARTHSHARE';
+export const APP_ICON = 'earthshare';
 // FIXME figure out best way to do this on both client and server from env
 // vars. client should read $STM_Config, server should read config package.
-export const APP_URL = 'https://steemit.com';
-export const APP_DOMAIN = 'steemit.com';
+export const APP_URL = 'https://earthshare.network';
+export const APP_DOMAIN = 'earthshare.network';
 export const LIQUID_TOKEN = 'Steem';
 // sometimes it's impossible to use html tags to style coin name, hence usage of _UPPERCASE modifier
 export const LIQUID_TOKEN_UPPERCASE = 'STEEM';
@@ -38,14 +38,14 @@ export const FRACTION_DIGITS = 2; // default amount of decimal digits
 export const FRACTION_DIGITS_MARKET = 3; // accurate amount of deciaml digits (example: used in market)
 
 // meta info
-export const TWITTER_HANDLE = '@steemit';
+export const TWITTER_HANDLE = '';
 export const SHARE_IMAGE =
-    'https://' + APP_DOMAIN + '/images/steemit-share.png';
+    'https://' + APP_DOMAIN + '/images/earthshare-share.png';
 export const TWITTER_SHARE_IMAGE =
-    'https://' + APP_DOMAIN + '/images/steemit-twshare.png';
+    'https://' + APP_DOMAIN + '/images/earthshare-twshare.png';
 export const SITE_DESCRIPTION =
-    'Steemit is a social media platform where everyone gets paid for ' +
-    'creating and curating content. It leverages a robust digital points system, called Steem, that ' +
+    'Earthshare is a social media platform where everyone gets paid for ' +
+    'creating and curating content. It leverages a robust digital points system, called ESH, that ' +
     'supports real value for digital rewards through market price discovery and liquidity';
 
 // various

@@ -54,7 +54,7 @@ const XMLSerializer = new xmldom.XMLSerializer();
  *    - convert naked URLs to images/links
  *    - convert embeddable URLs to <iframe>s
  *    - basic sanitization?
- *  2. Steemit.com Rendering - add in proprietary Steemit.com functions/links
+ *  2. Earthshare.network Rendering - add in proprietary Earthshare.network functions/links
  *    - convert <iframe>s to custom objects
  *    - linkify #tags and @mentions
  *    - proxify images
@@ -150,9 +150,9 @@ function link(state, child) {
             // Unlink potential phishing attempts
             if (
                 (url.indexOf('#') !== 0 && // Allow in-page links
-                    (child.textContent.match(/(www\.)?steemit\.com/i) &&
+                    (child.textContent.match(/(www\.)?earthshare\.network/i) &&
                         !url.match(
-                            /https?:\/\/(.*@)?(www\.)?steemit\.com/i
+                            /https?:\/\/(.*@)?(www\.)?earthshare\.network/i
                         ))) ||
                 Phishing.looksPhishy(url)
             ) {
@@ -213,7 +213,7 @@ function img(state, child) {
     }
 }
 
-// For all img elements with non-local URLs, prepend the proxy URL (e.g. `https://img0.steemit.com/0x0/`)
+// For all img elements with non-local URLs, prepend the proxy URL (e.g. `https://i.earthshare.network/0x0/`)
 function proxifyImages(doc) {
     if (!doc) return;
     [...doc.getElementsByTagName('img')].forEach(node => {
@@ -376,7 +376,7 @@ function vimeoId(data) {
 
 function ipfsPrefix(url) {
     if ($STM_Config.ipfs_prefix) {
-        // Convert //ipfs/xxx  or /ipfs/xxx  into  https://steemit.com/ipfs/xxxxx
+        // Convert //ipfs/xxx  or /ipfs/xxx  into  https://earthshare.network/ipfs/xxxxx
         if (/^\/?\/ipfs\//.test(url)) {
             const slash = url.charAt(1) === '/' ? 1 : 0;
             url = url.substring(slash + '/ipfs/'.length); // start with only 1 /
