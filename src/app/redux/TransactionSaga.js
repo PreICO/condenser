@@ -815,7 +815,7 @@ export function* recoverAccount({
 }
 
 /** auths must start with most powerful key: owner for example */
-// const twofaAccount = 'steem'
+// const twofaAccount = 'earthshare'
 export function* updateAuthorities({
     payload: { accountName, signingKey, auths, twofa, onSuccess, onError },
 }) {
@@ -955,7 +955,7 @@ export function* updateAuthorities({
 }
 
 /** auths must start with most powerful key: owner for example */
-// const twofaAccount = 'steem'
+// const twofaAccount = 'earthshare'
 export function* updateMeta(params) {
     // console.log('params', params)
     const {

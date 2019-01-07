@@ -59,7 +59,7 @@ export function vestingSteem(account, gprops) {
     return vesting_steemf;
 }
 
-// How much STEEM this account has delegated out (minus received).
+// How much ESH this account has delegated out (minus received).
 export function delegatedSteem(account, gprops) {
     const delegated_vests = parseFloat(
         account.delegated_vesting_shares.split(' ')[0]

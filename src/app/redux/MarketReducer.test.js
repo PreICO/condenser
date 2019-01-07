@@ -14,7 +14,7 @@ const someOpenOrders = [
         orderid: 1512431634,
         for_sale: 3000,
         sell_price: {
-            base: '3.000 STEEM',
+            base: '3.000 ESH',
             quote: '1.998 SBD',
         },
         real_price: '0',
@@ -28,7 +28,7 @@ const someOpenOrders = [
         orderid: 1512431689,
         for_sale: 7000,
         sell_price: {
-            base: '7.000 STEEM',
+            base: '7.000 ESH',
             quote: '4.578 SBD',
         },
         real_price: '0',
@@ -42,7 +42,7 @@ const someOpenOrders = [
         orderid: 1512431835,
         for_sale: 3000,
         sell_price: {
-            base: '3.000 STEEM',
+            base: '3.000 ESH',
             quote: '1.953 SBD',
         },
         real_price: '0',
@@ -57,7 +57,7 @@ const someOpenOrders = [
         for_sale: 507,
         sell_price: {
             base: '0.507 SBD',
-            quote: '1.000 STEEM',
+            quote: '1.000 ESH',
         },
         real_price: '0',
         rewarded: false,
@@ -71,7 +71,7 @@ const someOpenOrders = [
         for_sale: 507,
         sell_price: {
             base: '0.507 SBD',
-            quote: '1.000 STEEM',
+            quote: '1.000 ESH',
         },
         real_price: '0',
         rewarded: false,

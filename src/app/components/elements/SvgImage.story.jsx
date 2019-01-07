@@ -4,7 +4,7 @@ import { withKnobs, number } from '@storybook/addon-knobs';
 import SvgImage from './SvgImage';
 import { Grid } from './Icon.story';
 
-const svgs = ['404', 'facebook', 'reddit', 'steemit'];
+const svgs = ['404', 'facebook', 'reddit', 'earthshare'];
 
 const options = {
     range: true,

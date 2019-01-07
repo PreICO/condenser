@@ -5,7 +5,7 @@ import { translateHtml } from 'app/Translator';
 const mailchimp_form = `
 <!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup text-center">
-<form action="//steemit.us13.list-manage.com/subscribe/post?u=66efbe94e8b1cf5f44ef6aac5&amp;id=3f204846eb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate medium-5 large-5 small-6 columns center" novalidate>
+<form action="//earthshare.us13.list-manage.com/subscribe/post?u=66efbe94e8b1cf5f44ef6aac5&amp;id=3f204846eb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate medium-5 large-5 small-6 columns center" novalidate>
     <div id="mc_embed_signup_scroll">
 
 <div class="mc-field-group">
@@ -43,8 +43,8 @@ export default class Index extends React.Component {
         return (
             <div className="Index">
                 <div className="text-center">
-                    {/*<img src={require('app/assets/images/steemit.svg')} />*/}
-                    <SvgImage name="steemit" width="480px" height="240px" />
+                    {/*<img src={require('app/assets/images/earthshare.svg')} />*/}
+                    <SvgImage name="earthshare" width="480px" height="240px" />
                 </div>
                 <h1 className="center text-center">
                     {translateHtml(

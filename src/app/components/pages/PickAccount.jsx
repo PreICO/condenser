@@ -148,8 +148,8 @@ class PickAccount extends React.Component {
                         <div className="callout alert">
                             <h4>Browser Out of Date</h4>
                             <p>
-                                We will be unable to create your Steem account
-                                with this browser.
+                                We will be unable to create your Earthshare
+                                account with this browser.
                             </p>
                             <p>
                                 The latest versions of{' '}
@@ -161,7 +161,7 @@ class PickAccount extends React.Component {
                                     Firefox
                                 </a>
                                 are well-tested and known to work well with
-                                steemit.com.
+                                earthshare.network.
                             </p>
                         </div>
                     </div>
@@ -182,8 +182,8 @@ class PickAccount extends React.Component {
                                 before you can create an additional account.
                             </p>
                             <p>
-                                Please note that Steemit can only register one
-                                account per verified user.
+                                Please note that Earthshare can only register
+                                one account per verified user.
                             </p>
                         </div>
                     </div>
@@ -237,10 +237,10 @@ class PickAccount extends React.Component {
         //     return <div className="row">
         //         <div className="column">
         //             <div className="callout alert">
-        //                 <p>Our records indicate that you already have steem account: <strong>{existingUserAccount}</strong></p>
-        //                 <p>In order to prevent abuse Steemit can only register one account per verified user.</p>
+        //                 <p>Our records indicate that you already have earthshare account: <strong>{existingUserAccount}</strong></p>
+        //                 <p>In order to prevent abuse Earthshare can only register one account per verified user.</p>
         //                 <p>You can either <a href="/login.html">login</a> to your existing account
-        //                     or <a href="mailto:support@steemit.com">send us email</a> if you need a new account.</p>
+        //                     or <a href="mailto:support@earthshare.com">send us email</a> if you need a new account.</p>
         //             </div>
         //         </div>
         //     </div>;
@@ -291,12 +291,12 @@ class PickAccount extends React.Component {
 
                         <br />
                         <h4 className="CreateAccount__title">
-                            Welcome to Steemit
+                            Welcome to Earthshare
                         </h4>
                         <div>
                             <p>
                                 Your account name is how you will be known on
-                                steemit.com.<br />
+                                earthshare.network.<br />
                                 {/*Your account name <strong>can never be changed</strong>, so please choose carefully.*/}
                             </p>
                         </div>

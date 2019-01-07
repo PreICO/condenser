@@ -18,10 +18,10 @@ export function formatCoins(string) {
     string = string
         .replace('SBD', DEBT_TOKEN_SHORT)
         .replace('SD', DEBT_TOKEN_SHORT)
-        .replace('Steem Power', VESTING_TOKEN)
-        .replace('STEEM POWER', VESTING_TOKEN)
-        .replace('Steem', LIQUID_TOKEN)
-        .replace('STEEM', LIQUID_TOKEN_UPPERCASE)
+        .replace('Esh Power', VESTING_TOKEN)
+        .replace('ESH POWER', VESTING_TOKEN)
+        .replace('Esh', LIQUID_TOKEN)
+        .replace('ESH', LIQUID_TOKEN_UPPERCASE)
         .replace('$', CURRENCY_SIGN);
     return string;
 }

@@ -42,8 +42,8 @@ describe('Links', () => {
     it('by domain', () => {
         const locals = [
             'https://localhost/',
-            'http://steemit.com',
-            'http://steemit.com/group',
+            'http://earthshare.network',
+            'http://earthshare.network/group',
         ];
         match(linksRe.local(), locals);
         matchNot(linksRe.remote(), locals);

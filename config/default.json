@@ -33,13 +33,13 @@
     "site_key": false
   },
   "registrar": {
-    "account": "-",
-    "fee": "0.5 STEEM",
-    "delegation": "150250.000000 VESTS",
+    "account": "faucet",
+    "fee": "0.5 ESH",
+    "delegation": "1.000000 VESTS",
     "signing_key": "5J..."
   },
   "requestAccountRecovery": {
-    "recovery_account": "preico",
+    "recovery_account": "faucet",
     "signing_key": "5J..."
   },
   "sendgrid": {
@@ -50,7 +50,7 @@
       "waiting_list_invite": false
     }
   },
-  "server_session_secret": "exiKdyF+IwRIXJDmtGIl4vWUz4i3eVSISpfZoeYc0s4=",
+  "server_session_secret": "U9qfNjcCKbW/S3yDGU7UVVVy8Y1Hq1wJ4rkqqaGMv5Q=",
   "session_cookie_key": "earthshare",
   "session_key": "earthshare",
   "site_domain": "earthshare.network",
@@ -70,7 +70,7 @@
   },
   "upload_image": false,
   "steemd_connection_client": "https://a.earthshare.network",
-  "steemd_connection_server": "https://jussi:9000",
+  "steemd_connection_server": "http://jussi:9000",
   "steemd_use_appbase": false,
   "chain_id": "de8b3f085c312bc871ca3bd5f6efa0f09c4d428a4f7e35354f63a0c403e70b92",
   "address_prefix": "ESH",

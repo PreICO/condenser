@@ -34,8 +34,8 @@ describe('makeCanonicalLink', () => {
             'https://busy.org/@test/test-post',
         ],
         [
-            'handles posts from steemit',
-            { ...post_data, json_metadata: { app: 'steemit/0.1' } },
+            'handles posts from earthshare',
+            { ...post_data, json_metadata: { app: 'earthshare/0.1' } },
             'https://steemit.com/testing/@test/test-post',
         ],
         [

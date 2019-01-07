@@ -20,7 +20,7 @@ const mockGlobal = Map({
     props: Map({ sbd_print_rate: 99 }),
     feed_price: Map({
         base: '5 SBD',
-        quote: '10 STEEM',
+        quote: '10 ESH',
     }),
     content: Map({
         test: Map({
@@ -296,7 +296,7 @@ describe('Voting', () => {
         );
     });
 
-    it('should omit liquid steem if print rate is 10000', () => {
+    it('should omit liquid esh if print rate is 10000', () => {
         const store = createStore(rootReducer);
         const post_obj = fromJS({
             stats: {
@@ -325,7 +325,7 @@ describe('Voting', () => {
         );
     });
 
-    it('should show liquid steem if print rate is < 10000', () => {
+    it('should show liquid esh if print rate is < 10000', () => {
         const post_obj = fromJS({
             stats: {
                 total_votes: 1,
@@ -350,7 +350,7 @@ describe('Voting', () => {
             </Provider>
         );
         expect(JSON.stringify(component.toJSON())).toContain(
-            '(2.50 SBD, 2.50 STEEM, 5.00 SP)'
+            '(2.50 SBD, 2.50 ESH, 5.00 SP)'
         );
     });
 });

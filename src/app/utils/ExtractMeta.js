@@ -114,5 +114,8 @@ export default function extractMeta(chain_data, rp) {
         // site
         addSiteMeta(metas);
     }
+
+    metas.push({name: 'google-site-verification', content: 'K1YXIil1EsfW9Ak90RQyzqABKZ1n6j-ZXAq5vRSxTCk'});
+
     return metas;
 }

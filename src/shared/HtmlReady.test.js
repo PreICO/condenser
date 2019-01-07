@@ -11,7 +11,7 @@ describe('htmlready', () => {
         expect(HtmlReady(teststring).html).toEqual('');
     });
 
-    it('should allow links where the text portion and href contains steemit.com', () => {
+    it('should allow links where the text portion and href contains earthshare.network', () => {
         const dirty =
             '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steemit.com/signup" xmlns="http://www.w3.org/1999/xhtml">https://steemit.com/signup</a></xml>';
         const res = HtmlReady(dirty).html;
@@ -30,57 +30,57 @@ describe('htmlready', () => {
         expect(externalDomainResult).toEqual(externalDomainDirty);
     });
 
-    it('should not allow links where the text portion contains steemit.com but the link does not', () => {
+    it('should not allow links where the text portion contains earthshare.network but the link does not', () => {
         // There isn't an easy way to mock counterpart, even with proxyquire, so we just test for the missing translation message -- ugly but ok
 
         const dirty =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steamit.com/signup" xmlns="http://www.w3.org/1999/xhtml">https://steemit.com/signup</a></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steamit.com/signup" xmlns="http://www.w3.org/1999/xhtml">https:/earthshare.network/signup</a></xml>';
         const cleansed =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://steemit.com/signup / https://steamit.com/signup</div></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://earthshare.network/signup / https://steamit.com/signup</div></xml>';
         const res = HtmlReady(dirty).html;
         expect(res).toEqual(cleansed);
 
         const cased =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steamit.com/signup" xmlns="http://www.w3.org/1999/xhtml">https://Steemit.com/signup</a></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steamit.com/signup" xmlns="http://www.w3.org/1999/xhtml">https://Earthshare.network/signup</a></xml>';
         const cleansedcased =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://Steemit.com/signup / https://steamit.com/signup</div></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://Earthshare.network/signup / https://steamit.com/signup</div></xml>';
         const rescased = HtmlReady(cased).html;
         expect(rescased).toEqual(cleansedcased);
 
         const withuser =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steamit.com/signup" xmlns="http://www.w3.org/1999/xhtml">https://official@steemit.com/signup</a></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steamit.com/signup" xmlns="http://www.w3.org/1999/xhtml">https://official@earthshare.network/signup</a></xml>';
         const cleansedwithuser =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://official@steemit.com/signup / https://steamit.com/signup</div></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://official@earthshare.network/signup / https://steamit.com/signup</div></xml>';
         const reswithuser = HtmlReady(withuser).html;
         expect(reswithuser).toEqual(cleansedwithuser);
 
         const noendingslash =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steamit.com" xmlns="http://www.w3.org/1999/xhtml">https://steemit.com</a></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steamit.com" xmlns="http://www.w3.org/1999/xhtml">https://earthshare.network</a></xml>';
         const cleansednoendingslash =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://steemit.com / https://steamit.com</div></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://earthshare.network / https://steamit.com</div></xml>';
         const resnoendingslash = HtmlReady(noendingslash).html;
         expect(resnoendingslash).toEqual(cleansednoendingslash);
 
         //make sure extra-domain in-page links are also caught by our phishy link scan.
         const domainInpage =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steamit.com#really-evil-inpage-component" xmlns="http://www.w3.org/1999/xhtml">https://steemit.com</a></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steamit.com#really-evil-inpage-component" xmlns="http://www.w3.org/1999/xhtml">https://earthshare.network</a></xml>';
         const cleanDomainInpage =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://steemit.com / https://steamit.com#really-evil-inpage-component</div></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://earthshare.network / https://steamit.com#really-evil-inpage-component</div></xml>';
         const resDomainInpage = HtmlReady(domainInpage).html;
         expect(resDomainInpage).toEqual(cleanDomainInpage);
 
-        // anchor links including steemit.com should be allowed
+        // anchor links including earthshare.network should be allowed
         const inpage =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="#https://steamit.com/unlikelyinpagelink" xmlns="http://www.w3.org/1999/xhtml">Go down lower for https://steemit.com info!</a></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="#https://steamit.com/unlikelyinpagelink" xmlns="http://www.w3.org/1999/xhtml">Go down lower for https://earthshare.network info!</a></xml>';
         const cleanInpage =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="#https://steamit.com/unlikelyinpagelink" xmlns="http://www.w3.org/1999/xhtml">Go down lower for https://steemit.com info!</a></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="#https://steamit.com/unlikelyinpagelink" xmlns="http://www.w3.org/1999/xhtml">Go down lower for https://earthshare.network info!</a></xml>';
         const resinpage = HtmlReady(inpage).html;
         expect(resinpage).toEqual(cleanInpage);
 
         const noprotocol =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steamit.com/" xmlns="http://www.w3.org/1999/xhtml">for a good time, visit steemit.com today</a></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steamit.com/" xmlns="http://www.w3.org/1999/xhtml">for a good time, visit earthshare.network today</a></xml>';
         const cleansednoprotocol =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">for a good time, visit steemit.com today / https://steamit.com/</div></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">for a good time, visit earthshare.network today / https://steamit.com/</div></xml>';
         const resnoprotocol = HtmlReady(noprotocol).html;
         expect(resnoprotocol).toEqual(cleansednoprotocol);
     });
@@ -113,18 +113,18 @@ describe('htmlready', () => {
 
     it('should not link usernames at the front of linked text', () => {
         const nameinsidelinkfirst =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steemit.com/signup">@hihi</a></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://earthshare.network/signup">@hihi</a></xml>';
         const htmlified =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steemit.com/signup">@hihi</a></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://earthshare.network/signup">@hihi</a></xml>';
         const res = HtmlReady(nameinsidelinkfirst).html;
         expect(res).toEqual(htmlified);
     });
 
     it('should not link usernames in the middle of linked text', () => {
         const nameinsidelinkmiddle =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steemit.com/signup">hi @hihi</a></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://earthshare.network/signup">hi @hihi</a></xml>';
         const htmlified =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steemit.com/signup">hi @hihi</a></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://earthshare.network/signup">hi @hihi</a></xml>';
         const res = HtmlReady(nameinsidelinkmiddle).html;
         expect(res).toEqual(htmlified);
     });
@@ -157,7 +157,7 @@ describe('htmlready', () => {
 
     it('should not mistake usernames in valid comment urls as mentions', () => {
         const url =
-            'https://steemit.com/spam/@test-safari/34gfex-december-spam#@test-safari/re-test-safari-34gfex-december-spam-20180110t234627522z';
+            'https://earthshare.network/spam/@test-safari/34gfex-december-spam#@test-safari/re-test-safari-34gfex-december-spam-20180110t234627522z';
         const prefix = '<xml xmlns="http://www.w3.org/1999/xhtml">';
         const suffix = '</xml>';
         const input = prefix + url + suffix;
@@ -185,9 +185,9 @@ describe('htmlready', () => {
 
     it('should detect urls that are phishy', () => {
         const dirty =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steewit.com/signup" xmlns="http://www.w3.org/1999/xhtml">https://steemit.com/signup</a></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><a href="https://steewit.com/signup" xmlns="http://www.w3.org/1999/xhtml">https://earthshare.network/signup</a></xml>';
         const cleansed =
-            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://steemit.com/signup / https://steewit.com/signup</div></xml>';
+            '<xml xmlns="http://www.w3.org/1999/xhtml"><div title="missing translation: en.g.phishy_message" class="phishy">https://earthshare.network/signup / https://steewit.com/signup</div></xml>';
         const res = HtmlReady(dirty).html;
         expect(res).toEqual(cleansed);
     });

@@ -1008,7 +1008,7 @@ module.exports = {
                 fill_or_kill = false,
                 expiration = DEFAULT_EXPIRE
             ) => {
-                // create_order jsc 12345 "1.000 SBD" "100.000 STEEM" true 1467122240 false
+                // create_order jsc 12345 "1.000 SBD" "100.000 ESH" true 1467122240 false
 
                 // Padd amounts to 3 decimal places
                 amount_to_sell = amount_to_sell.replace(

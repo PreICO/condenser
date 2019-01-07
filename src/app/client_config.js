@@ -9,14 +9,14 @@ export const APP_ICON = 'earthshare';
 // vars. client should read $STM_Config, server should read config package.
 export const APP_URL = 'https://earthshare.network';
 export const APP_DOMAIN = 'earthshare.network';
-export const LIQUID_TOKEN = 'Steem';
+export const LIQUID_TOKEN = 'Esh';
 // sometimes it's impossible to use html tags to style coin name, hence usage of _UPPERCASE modifier
-export const LIQUID_TOKEN_UPPERCASE = 'STEEM';
-export const VESTING_TOKEN = 'STEEM POWER';
-export const INVEST_TOKEN_UPPERCASE = 'STEEM POWER';
-export const INVEST_TOKEN_SHORT = 'SP';
-export const DEBT_TOKEN = 'STEEM DOLLAR';
-export const DEBT_TOKENS = 'STEEM DOLLARS';
+export const LIQUID_TOKEN_UPPERCASE = 'ESH';
+export const VESTING_TOKEN = 'ESH POWER';
+export const INVEST_TOKEN_UPPERCASE = 'ESH POWER';
+export const INVEST_TOKEN_SHORT = 'EP';
+export const DEBT_TOKEN = 'ESH DOLLAR';
+export const DEBT_TOKENS = 'ESH DOLLARS';
 export const CURRENCY_SIGN = '$';
 export const WIKI_URL = ''; // https://wiki.golos.io/
 export const LANDING_PAGE_URL = 'https://steem.io/';
@@ -25,7 +25,7 @@ export const PRIVACY_POLICY_URL = 'https://' + APP_DOMAIN + '/privacy.html';
 export const WHITEPAPER_URL = 'https://steem.io/SteemWhitePaper.pdf';
 
 // these are dealing with asset types, not displaying to client, rather sending data over websocket
-export const LIQUID_TICKER = 'STEEM';
+export const LIQUID_TICKER = 'ESH';
 export const VEST_TICKER = 'VESTS';
 export const DEBT_TICKER = 'SBD';
 export const DEBT_TOKEN_SHORT = 'SBD';

@@ -362,7 +362,7 @@ class PostFull extends React.Component {
                 {content.title}
                 {full_power && (
                     <span title={tt('g.powered_up_100')}>
-                        <Icon name="steempower" />
+                        <Icon name="eshpower" />
                     </span>
                 )}
             </h1>

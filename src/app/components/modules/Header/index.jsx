@@ -114,7 +114,7 @@ class Header extends React.Component {
         } else if (route.page == 'CreateAccount') {
             page_title = tt('header_jsx.create_account');
         } else if (route.page == 'PickAccount') {
-            page_title = `Pick Your New Steemit Account`;
+            page_title = `Pick Your New Earthshare Account`;
         } else if (route.page == 'Approval') {
             page_title = `Account Confirmation`;
         } else if (

@@ -78,8 +78,8 @@ export default class OrderRow extends React.Component {
                 className={this.state.animate ? 'animate' : ''}
             >
                 {bid ? totalTD : price}
-                {bid ? sbd : steem}
-                {bid ? steem : sbd}
+                {bid ? sbd : esh}
+                {bid ? esh : sbd}
                 {bid ? price : totalTD}
             </tr>
         );

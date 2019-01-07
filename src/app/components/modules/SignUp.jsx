@@ -32,9 +32,9 @@ class SignUp extends React.Component {
                         style={{ margin: '20px', padding: '40px' }}
                     >
                         <p>
-                            Membership to Steemit.com is now under invitation
-                            only because of unexpectedly high sign up rate.
-                            Submit your email to get on the waiting list.
+                            Membership to Earthshare.network is now under
+                            invitation only because of unexpectedly high sign up
+                            rate. Submit your email to get on the waiting list.
                         </p>
                         <AddToWaitingList />
                     </div>
@@ -48,8 +48,8 @@ class SignUp extends React.Component {
                     <div className="column">
                         <h3>Sign Up</h3>
                         <p>
-                            Steemit funds each account with over{' '}
-                            {this.props.signup_bonus} worth of Steem Power; to
+                            Earthshare funds each account with over{' '}
+                            {this.props.signup_bonus} worth of Esh Power; to
                             prevent abuse, we require new users to login via
                             social media.<br />
                             Your personal information will be kept{' '}
@@ -116,7 +116,7 @@ class SignUp extends React.Component {
                     <div className="column">
                         <br />
                         <p className="secondary">
-                            By verifying your account you agree to the Steemit{' '}
+                            By verifying your account you agree to the Earthshare{' '}
                             <a href="/tos.html" target="_blank">
                                 terms and conditions
                             </a>.

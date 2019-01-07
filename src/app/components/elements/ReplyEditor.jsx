@@ -939,7 +939,7 @@ export default formId =>
                 if (rtags.links.size) meta.links = rtags.links;
                 else delete meta.links;
 
-                meta.app = 'steemit/0.1';
+                meta.app = 'earthshare/0.1';
                 if (isStory) {
                     meta.format = isHtml ? 'html' : 'markdown';
                 }
@@ -979,12 +979,12 @@ export default formId =>
                                 max_accepted_payout: '0.000 SBD',
                             };
                             break;
-                        case '100%': // 100% steem power payout
+                        case '100%': // 100% esh power payout
                             __config.comment_options = {
                                 percent_steem_dollars: 0, // 10000 === 100% (of 50%)
                             };
                             break;
-                        default: // 50% steem power, 50% sd+steem
+                        default: // 50% esh power, 50% sd+esh
                     }
                 }
 

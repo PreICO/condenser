@@ -41,7 +41,7 @@ class UserWallet extends React.Component {
             const new_window = window.open();
             new_window.opener = null;
             new_window.location =
-                'https://blocktrades.us/?input_coin_type=eth&output_coin_type=steem&receive_address=' +
+                'https://blocktrades.us/?input_coin_type=eth&output_coin_type=esh&receive_address=' +
                 name;
         };
         this.onShowWithdrawSteem = e => {
@@ -49,14 +49,14 @@ class UserWallet extends React.Component {
             const new_window = window.open();
             new_window.opener = null;
             new_window.location =
-                'https://blocktrades.us/unregistered_trade/steem/eth';
+                'https://blocktrades.us/unregistered_trade/esh/eth';
         };
         this.onShowDepositPower = (current_user_name, e) => {
             e.preventDefault();
             const new_window = window.open();
             new_window.opener = null;
             new_window.location =
-                'https://blocktrades.us/?input_coin_type=eth&output_coin_type=steem_power&receive_address=' +
+                'https://blocktrades.us/?input_coin_type=eth&output_coin_type=esh_power&receive_address=' +
                 current_user_name;
         };
         this.onShowDepositSBD = (current_user_name, e) => {
@@ -166,7 +166,7 @@ class UserWallet extends React.Component {
         if (savings_withdraws) {
             savings_withdraws.forEach(withdraw => {
                 const [amount, asset] = withdraw.get('amount').split(' ');
-                if (asset === 'STEEM') savings_pending += parseFloat(amount);
+                if (asset === 'ESH') savings_pending += parseFloat(amount);
                 else {
                     if (asset === 'SBD')
                         savings_sbd_pending += parseFloat(amount);
@@ -235,7 +235,7 @@ class UserWallet extends React.Component {
             !open_orders || !isMyAccount
                 ? 0
                 : open_orders.reduce((o, order) => {
-                      if (order.sell_price.base.indexOf('STEEM') !== -1) {
+                      if (order.sell_price.base.indexOf('ESH') !== -1) {
                           o += order.for_sale;
                       }
                       return o;
@@ -305,7 +305,7 @@ class UserWallet extends React.Component {
                 link: '#',
                 onClick: showTransfer.bind(
                     this,
-                    'STEEM',
+                    'ESH',
                     'Transfer to Account'
                 ),
             },
@@ -314,7 +314,7 @@ class UserWallet extends React.Component {
                 link: '#',
                 onClick: showTransfer.bind(
                     this,
-                    'STEEM',
+                    'ESH',
                     'Transfer to Savings'
                 ),
             },
@@ -413,7 +413,7 @@ class UserWallet extends React.Component {
             '$' + sbdOrders.toFixed(3)
         );
         const savings_balance_str = numberWithCommas(
-            saving_balance_steem.toFixed(3) + ' STEEM'
+            saving_balance_steem.toFixed(3) + ' ESH'
         );
         const savings_sbd_balance_str = numberWithCommas(
             '$' + sbd_balance_savings.toFixed(3)
@@ -425,7 +425,7 @@ class UserWallet extends React.Component {
                     LIQUID_TOKEN,
                 }),
                 link: '#',
-                onClick: showTransfer.bind(this, 'STEEM', 'Savings Withdraw'),
+                onClick: showTransfer.bind(this, 'ESH', 'Savings Withdraw'),
             },
         ];
         const savings_sbd_menu = [
@@ -453,7 +453,7 @@ class UserWallet extends React.Component {
                 : null;
         const reward_sp =
             parseFloat(account.get('reward_vesting_steem').split(' ')[0]) > 0
-                ? account.get('reward_vesting_steem').replace('STEEM', 'SP')
+                ? account.get('reward_vesting_steem').replace('ESH', 'SP')
                 : null;
 
         let rewards = [];
@@ -530,7 +530,7 @@ class UserWallet extends React.Component {
                 </div>
                 <div className="UserWallet__balance row">
                     <div className="column small-12 medium-8">
-                        STEEM
+                        ESH
                         <FormattedHTMLMessage
                             className="secondary"
                             id="tips_js.liquid_token"
@@ -543,10 +543,10 @@ class UserWallet extends React.Component {
                                 className="Wallet_dropdown"
                                 items={steem_menu}
                                 el="li"
-                                selected={steem_balance_str + ' STEEM'}
+                                selected={steem_balance_str + ' ESH'}
                             />
                         ) : (
-                            steem_balance_str + ' STEEM'
+                            steem_balance_str + ' ESH'
                         )}
                         {steemOrders ? (
                             <div
@@ -558,7 +558,7 @@ class UserWallet extends React.Component {
                             >
                                 <Link to="/market">
                                     <Tooltip t={tt('market_jsx.open_orders')}>
-                                        (+{steem_orders_balance_str} STEEM)
+                                        (+{steem_orders_balance_str} ESH)
                                     </Tooltip>
                                 </Link>
                             </div>
@@ -567,7 +567,7 @@ class UserWallet extends React.Component {
                 </div>
                 <div className="UserWallet__balance row zebra">
                     <div className="column small-12 medium-8">
-                        STEEM POWER
+                        ESH POWER
                         <FormattedHTMLMessage
                             className="secondary"
                             id="tips_js.influence_token"
@@ -587,10 +587,10 @@ class UserWallet extends React.Component {
                                 className="Wallet_dropdown"
                                 items={power_menu}
                                 el="li"
-                                selected={power_balance_str + ' STEEM'}
+                                selected={power_balance_str + ' ESH'}
                             />
                         ) : (
-                            power_balance_str + ' STEEM'
+                            power_balance_str + ' ESH'
                         )}
                         {delegated_steem != 0 ? (
                             <div
@@ -600,8 +600,8 @@ class UserWallet extends React.Component {
                                         : null,
                                 }}
                             >
-                                <Tooltip t="STEEM POWER delegated to/from this account">
-                                    ({received_power_balance_str} STEEM)
+                                <Tooltip t="ESH POWER delegated to/from this account">
+                                    ({received_power_balance_str} ESH)
                                 </Tooltip>
                             </div>
                         ) : null}
@@ -609,7 +609,7 @@ class UserWallet extends React.Component {
                 </div>
                 <div className="UserWallet__balance row">
                     <div className="column small-12 medium-8">
-                        STEEM DOLLARS
+                        ESH DOLLARS
                         <div className="secondary">{sbdMessage}</div>
                     </div>
                     <div className="column small-12 medium-4">
@@ -761,7 +761,7 @@ export default connect(
         );
         if (feed_price && feed_price.has('base') && feed_price.has('quote')) {
             const { base, quote } = feed_price.toJS();
-            if (/ SBD$/.test(base) && / STEEM$/.test(quote))
+            if (/ SBD$/.test(base) && / ESH$/.test(quote))
                 price_per_steem = parseFloat(base.split(' ')[0]);
         }
         const savings_withdraws = state.user.get('savings_withdraws');

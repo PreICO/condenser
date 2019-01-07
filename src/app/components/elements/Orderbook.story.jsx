@@ -8,7 +8,7 @@ const selectOptions = ['error', 'default'];
 const mockOrder = {
     getSBDAmount: () => 999,
     getStringSBD: () => 'nine hundred and ninety nine',
-    getStringSteem: () => 'two hundred steem',
+    getStringSteem: () => 'two hundred esh',
     getStringPrice: () => '55',
     equals: () => 55,
 };
@@ -16,7 +16,7 @@ const mockOrder = {
 const mockOrder2 = {
     getSBDAmount: () => 111,
     getStringSBD: () => 'one hundred and eleven',
-    getStringSteem: () => 'one steem',
+    getStringSteem: () => 'one esh',
     getStringPrice: () => '55',
     equals: () => 55,
 };
